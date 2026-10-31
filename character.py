@@ -20,3 +20,27 @@ class Character:
         """Attack another character and return damage delt."""
         target.take_damage(self.attack_power)
         return self.attack_power
+
+class Player(Character):
+    """Represent a player who can use healing potions."""
+
+    def __init__(self, name):
+        """Initialize the player with default stats and potions."""
+        super().__init__(name, 100, 15)
+        self.potions = 2
+
+    def heal(self):
+        """Use a potion to restore health."""
+        if self.potions <= 0:
+            return 0
+
+        if self.health >= self.max_health:
+            return 0
+
+        old_health = self.health
+
+        self.health = min(self.max_health, self.health + 30)
+        self.potions -= 1
+
+        return self.health - old_health
+    
