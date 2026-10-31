@@ -52,6 +52,6 @@ class Enemy(Character):
         super().__init__(name, health, attack_power)
         self.enemy_type = enemy_type
 
-    def get_discription(self):
+    def get_description(self):
         """Return a short discription of the enemy."""
         return f"A {self.enemy_type} named {self.name} appears!"
