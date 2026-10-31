@@ -43,4 +43,15 @@ class Player(Character):
         self.potions -= 1
 
         return self.health - old_health
-    
+
+class Enemy(Character):
+    """Represent an enemy"""
+
+    def __init__(self, name, health, attack_power, enemy_type):
+        """Initialize an enemy with its stats and type."""
+        super().__init__(name, health, attack_power)
+        self.enemy_type = enemy_type
+
+    def get_discription(self):
+        """Return a short discription of the enemy."""
+        return f"A {self.enemy_type} named {self.name} appears!"
