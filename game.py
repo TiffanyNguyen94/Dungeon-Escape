@@ -35,7 +35,7 @@ class Game:
         if self.current_room == len(self.ROOMS):
             self.status = "won"
             self.enemy = None
-            return "You defeated the Dungeon Boss! Congrats! You win!"
+            return "You defeated the Dungeon Boss! You win!"
 
         self.current_room += 1
         self.enemy = self.create_enemy()
