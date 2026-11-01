@@ -24,7 +24,7 @@ class Character:
         return self.health > 0
 
     def attack(self, target):
-        """Attack another character and return damage delt."""
+        """Attack another character and return damage dealt."""
         target.take_damage(self.attack_power)
         return self.attack_power
 

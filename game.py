@@ -50,7 +50,7 @@ class Game:
 
         if not self.player.is_alive():
             self.status = "lost"
-            message += "\nYou have been defeated! Game over."\
+            message += "\nYou have been defeated! Game over."
 
         return message
 
@@ -86,7 +86,7 @@ class Game:
         return message
 
     def get_status(self):
-        """Return the player's curretn dungeon status."""
+        """Return the player's current dungeon status."""
         return(
             f"Player: {self.player.name}\n"
             f"HP: {self.player.health}/{self.player.max_health}\n"

@@ -53,7 +53,7 @@ def play_game(game):
                 print("\nGame saved successfully!")
 
             except ValueError as error:
-                print(f"\nSave falied: {error}")
+                print(f"\nSave failed: {error}")
 
         elif choice == "5":
             print("\nReturning to the main menu...")
