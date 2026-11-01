@@ -2,7 +2,7 @@
 Program: Dungeon Escape
 Author: Tiffany Nguyen
 Purpose: Test combat, dungeon progression, game outcomes.
-Resources: pytest documentation
+Pytest documentation
 Date: 10/31/2026
 """
 

@@ -12,6 +12,7 @@ from game import Game
 
 SAVE_FILE = Path(__file__).resolve().parent / "savegame.json"
 
+
 def save_game(game, filepath=SAVE_FILE):
     """Save the current game progress to a JSON file."""
     data = {
@@ -63,7 +64,7 @@ def load_game(filepath=SAVE_FILE):
             raise ValueError("Invalid potion count.")
 
         if room < 1 or room > len(Game.ROOMS):
-            raise ValueError("Invalid room nummber.")
+            raise ValueError("Invalid room number.")
 
         game = Game(name)
 

@@ -22,7 +22,7 @@ def show_combat_menu():
 
 def play_game(game):
     """Run the interactive dungeon until the game ends or player exits"""
-    print(f"\nWelcom to Dungeon Escape, {game.player.name}!")
+    print(f"\nWelcome to Dungeon Escape, {game.player.name}!")
 
     last_room = 0
 
@@ -48,7 +48,12 @@ def play_game(game):
             print("\n" + game.get_status())
 
         elif choice == "4":
-            print("\nGame saved successfully!")
+            try:
+                save_game(game)
+                print("\nGame saved successfully!")
+
+            except ValueError as error:
+                print(f"\nSave falied: {error}")
 
         elif choice == "5":
             print("\nReturning to the main menu...")
@@ -76,7 +81,7 @@ def start_new_game():
 
 
 def main():
-    """Display the main menu and manage the user's selection."""
+    """Display the main menu and manage user selections."""
     while True:
         print("\n=== DUNGEON ESCAPE ===")
         print("1. New Game")
@@ -89,7 +94,13 @@ def main():
             start_new_game()
 
         elif choice == "2":
-            print("\nGame loaded successfully!")
+            try:
+                game = load_game()
+                print("\nGame loaded successfully!")
+                play_game(game)
+
+            except ValueError as error:
+                print(f"\nLoad failed: {error}")
 
         elif choice == "3":
             print("\nThanks for playing Dungeon Escape!")
@@ -97,6 +108,7 @@ def main():
 
         else:
             print("\nInvalid choice. Please enter 1, 2, or 3.")
+
 
 if __name__ == "__main__":
     main()
