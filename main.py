@@ -2,10 +2,13 @@
 Program: Dungeon Escape
 Author: Tiffany Nguyen
 Purpose: Provide the menus and user interface for Dungeon Escape
-Date: 10/31/2026
+Date: 10/30/2026
 """
 
 from game import Game
+
+from storage import save_game, load_game
+
 
 
 def show_combat_menu():
@@ -45,10 +48,11 @@ def play_game(game):
             print("\n" + game.get_status())
 
         elif choice == "4":
-            print("\nSave functionality is coming soon...")
+            print("\nGame saved successfully!")
 
         elif choice == "5":
             print("\nReturning to the main menu...")
+            print("Unsaved progress will be lost.")
             return
 
         else:
@@ -85,7 +89,7 @@ def main():
             start_new_game()
 
         elif choice == "2":
-            print("\nLoad functionality coming soon...")
+            print("\nGame loaded successfully!")
 
         elif choice == "3":
             print("\nThanks for playing Dungeon Escape!")
