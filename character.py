@@ -38,6 +38,9 @@ class Player(Character):
 
     def heal(self):
         """Use a potion to restore health."""
+        if not self.is_alive():
+            return 0
+        
         if self.potions <= 0:
             return 0
 
@@ -45,7 +48,6 @@ class Player(Character):
             return 0
 
         old_health = self.health
-
         self.health = min(self.max_health, self.health + 30)
         self.potions -= 1
 

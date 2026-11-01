@@ -1,4 +1,9 @@
-"""Tests the base Character class."""
+"""
+Program: Dungeon Escape
+Author: Tiffany Nguyen
+Purpose: Tests the base Character class.
+Pytest documentation
+"""
 
 from character import Character
 
@@ -114,3 +119,14 @@ def test_inheritance():
     """Verify that Player and Enemy inherit from Character."""
     player = Player("Hero")
     goblin = Enemy("Bob", 30, 6, "Goblin")
+
+def test_defeated_player_cannot_heal():
+    """Verify that defeated players cannot use healing potions."""
+    player = Player("Hero")
+    player.take_damage(100)
+
+    recovered = player.heal()
+
+    assert recovered == 0
+    assert player.health == 0
+    assert player.potions == 2
