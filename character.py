@@ -1,3 +1,10 @@
+"""
+Program: Dungeon Escape
+Author: Tiffany Nguyen
+Purpose: Defines Character, Player, and Enemy classes
+Date: 10/30/2026
+"""
+
 class Character:
     """Represent a character with health and attack power."""
 
