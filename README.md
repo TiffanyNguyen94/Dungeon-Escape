@@ -11,8 +11,8 @@ The core gameplay concept begins with a player entering 5 rooms. Each room comes
 
 
 ## Link to video presentation 
-Video presentation coming soon...
-(based on the change of the due date...)
+https://www.youtube.com/watch?v=KAX1y0tINPA
+
 
 ## Features
 - Turn-based combat
